@@ -21,10 +21,26 @@ public:
 
     void Voice()
     {
-
+        cout << "kar-kar\n";
     }
 };
 
+class Car : public IMovable
+{
+public:
+    void SetSpeed(double speed) override 
+    {
+    };
+    double GetSpeed() override 
+    {
+        return 0;
+    };
+
+    void Sound()
+    {
+        cout << "bip-bip\n";
+    }
+};
 
 class Message
 {
@@ -94,10 +110,41 @@ public:
     }
 };
 
+class A
+{
+    int a;
+};
+
+class B : public A
+{
+    int b;
+};
+
+
 
 int main()
 {
-    IMovable* mptr = new Bird();
 
+    /*IMovable* imBird = new Bird();
+    IMovable* imCar = new Car();
+    IMovable* arr[2];
+    arr[0] = new Bird();
+    arr[1] = new Car();
+
+    
+    for (int i = 0; i < 2; i++)
+        if (dynamic_cast<Car*>(arr[i]))
+            dynamic_cast<Car*>(arr[i])->Sound();*/
+
+
+    A* a = new A();
+    B* b = new B();
+    A* ab = new B();
+
+    cout << sizeof(a) << "\n";
+    cout << sizeof(b) << "\n";
+    cout << sizeof(ab) << "\n";
+
+    
     return 0;
 }
